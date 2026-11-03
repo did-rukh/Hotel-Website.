@@ -42,15 +42,24 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
 
       {/* Main Centered Hero Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 my-auto text-center text-ink-foreground animate-rise">
-        <p className="eyebrow tracking-[0.25em] font-semibold">Kannur · Kerala · Est. Hospitality</p>
+        {/* Heritage & Destination Crest */}
+        <div className="inline-flex items-center gap-2 px-3.5 py-1 rounded-full bg-ink/45 backdrop-blur-sm border border-gold/25 shadow-xs">
+          <span className="text-gold text-[10.5px] sm:text-xs font-medium tracking-[0.26em] uppercase drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]">
+            Kannur · Kerala · Est. Hospitality
+          </span>
+        </div>
         
         <h1 className="mt-3 sm:mt-5 text-4xl sm:text-6xl md:text-7xl lg:text-8xl leading-[1.08] font-display text-white tracking-tight">
           Where comfort <em className="text-gold italic font-normal">welcomes</em> you
         </h1>
 
-        <p className="mt-4 sm:mt-5 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed">
-          {hotelInfo.shortBio}
-        </p>
+        {/* Boutique Sanctuary Bio with Ambient Backing */}
+        <div className="mt-4 sm:mt-5 max-w-2xl mx-auto px-4 py-1.5 relative">
+          <div className="absolute inset-0 bg-ink/30 rounded-2xl blur-md -z-10" />
+          <p className="text-sm sm:text-base md:text-lg text-white/90 font-light leading-relaxed tracking-wide drop-shadow-[0_1px_3px_rgba(0,0,0,0.7)]">
+            {hotelInfo.shortBio}
+          </p>
+        </div>
 
         {/* Rating Pill */}
         <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 sm:gap-2.5 px-3.5 py-1.5 border border-white/20 bg-ink/50 backdrop-blur-md text-[11px] sm:text-xs tracking-[0.18em] uppercase text-white rounded-full shadow-sm">

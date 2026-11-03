@@ -46,15 +46,15 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? 'bg-ink/95 py-1.5 backdrop-blur-md shadow-sm border-b border-white/5'
-            : 'py-2 sm:py-2.5 bg-gradient-to-b from-ink/75 via-ink/20 to-transparent'
+            ? 'bg-ink/95 py-2 backdrop-blur-md shadow-sm border-b border-white/5'
+            : 'py-2.5 sm:py-3.5 bg-gradient-to-b from-ink/80 via-ink/20 to-transparent'
         }`}
       >
-        <div className="mx-auto flex max-w-7xl h-11 sm:h-13 md:h-14 items-center justify-between px-4 sm:px-6 text-ink-foreground">
-          {/* Brand Logo (Proportionate, compact & clear) */}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 text-ink-foreground">
+          {/* Brand Logo (Optimized & professional) */}
           <a
             href="#home"
-            className="flex items-center group focus:outline-none"
+            className="flex items-center group focus:outline-none py-0.5"
             aria-label={hotelInfo.name}
           >
             <img
@@ -62,8 +62,8 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
               alt={hotelInfo.name}
               className={`w-auto object-contain transition-all duration-300 group-hover:opacity-90 ${
                 scrolled
-                  ? 'h-7 sm:h-8 md:h-8.5'
-                  : 'h-8 sm:h-9 md:h-9.5'
+                  ? 'h-8 sm:h-9 md:h-10'
+                  : 'h-10 sm:h-11 md:h-12 lg:h-13'
               }`}
             />
           </a>
@@ -74,7 +74,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-ink-foreground/85 hover:text-gold transition-colors duration-200 py-0.5"
+                className="text-ink-foreground/85 hover:text-gold transition-colors duration-200 py-1"
               >
                 {link.name}
               </a>
@@ -132,7 +132,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
                 <img
                   src={hotelInfo.logo}
                   alt={hotelInfo.name}
-                  className="h-10 sm:h-11 w-auto object-contain"
+                  className="h-11 sm:h-12 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMobileMenuOpen(false)}

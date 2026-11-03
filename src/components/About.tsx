@@ -98,9 +98,9 @@ export const About = ({ onOpenBooking }: AboutProps) => {
         <div className="mx-auto grid max-w-6xl gap-8 sm:gap-10 px-4 sm:px-6 text-center grid-cols-2 md:grid-cols-4">
           {hotelStats.map((stat, idx) => (
             <div key={idx}>
-              <p className="font-display text-5xl md:text-6xl text-gold">{stat.value}</p>
-              <p className="mt-2 text-xs uppercase tracking-[0.2em] opacity-80">{stat.label}</p>
-              <p className="mt-1 text-[11px] opacity-60 font-light">{stat.detail}</p>
+              <p className="font-display text-5xl md:text-6xl text-gold font-normal drop-shadow-sm">{stat.value}</p>
+              <p className="mt-2 text-xs uppercase tracking-[0.2em] font-semibold text-primary-foreground">{stat.label}</p>
+              <p className="mt-1 text-[11px] text-primary-foreground/85 font-normal">{stat.detail}</p>
             </div>
           ))}
         </div>

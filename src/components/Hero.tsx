@@ -42,35 +42,35 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
 
       {/* Main Centered Hero Content */}
       <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 my-auto text-center text-ink-foreground animate-rise">
-        <p className="eyebrow">Kannur · Kerala · Est. Hospitality</p>
+        <p className="eyebrow drop-shadow-sm font-semibold tracking-[0.25em]">Kannur · Kerala · Est. Hospitality</p>
         
-        <h1 className="mt-4 sm:mt-6 text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight font-display">
-          Where comfort <em className="text-gold italic font-normal">welcomes</em> you
+        <h1 className="mt-4 sm:mt-6 text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight font-display text-white drop-shadow-[0_4px_20px_rgba(0,0,0,0.7)]">
+          Where comfort <em className="text-gold italic font-normal drop-shadow-[0_2px_10px_rgba(0,0,0,0.5)]">welcomes</em> you
         </h1>
 
-        <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-ink-foreground/85 font-light leading-relaxed">
+        <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-white/95 font-normal leading-relaxed drop-shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
           {hotelInfo.shortBio}
         </p>
 
         {/* Rating Pill */}
-        <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 sm:gap-3 px-3.5 py-1.5 border border-ink-foreground/20 bg-ink/40 text-[11px] sm:text-xs tracking-[0.2em] uppercase text-ink-foreground">
+        <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 sm:gap-3 px-4 py-2 border border-gold/40 bg-ink/75 backdrop-blur-md text-[11px] sm:text-xs tracking-[0.2em] uppercase text-white shadow-lg rounded-sm">
           <span className="text-gold font-bold">{hotelInfo.rating}/10</span>
           <span>·</span>
-          <span>{hotelInfo.ratingLabel}</span>
-          <span className="hidden sm:inline">· Verified Expedia Score</span>
+          <span className="font-medium">{hotelInfo.ratingLabel}</span>
+          <span className="hidden sm:inline opacity-90">· Verified Expedia Score</span>
         </div>
 
         {/* Buttons Row with proper mobile spacing */}
         <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto">
           <a
             href="#booking-bar"
-            className="btn-gold w-full sm:w-auto text-center !py-3.5"
+            className="btn-gold w-full sm:w-auto text-center !py-3.5 shadow-lg"
           >
             Reserve your stay
           </a>
           <a
             href="#rooms"
-            className="btn-outline-light w-full sm:w-auto text-center !py-3.5"
+            className="btn-outline-light w-full sm:w-auto text-center !py-3.5 shadow-lg backdrop-blur-sm"
           >
             Explore rooms
           </a>
@@ -81,13 +81,13 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
       <div id="booking-bar" className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 mt-8 sm:mt-12">
         <form
           onSubmit={handleSubmit}
-          className="border border-ink-foreground/20 bg-ink/90 backdrop-blur-md p-4 sm:p-6 text-ink-foreground shadow-2xl rounded-sm"
+          className="border border-gold/30 bg-ink/95 backdrop-blur-md p-5 sm:p-7 text-ink-foreground shadow-[0_20px_50px_rgba(0,0,0,0.6)] rounded-sm"
         >
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6 items-end">
             {/* Check-In */}
             <div>
-              <label htmlFor="hero-check-in" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[10px]">
-                <Calendar className="w-3 h-3 text-gold" /> Check-In
+              <label htmlFor="hero-check-in" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[11px] font-semibold text-gold">
+                <Calendar className="w-3.5 h-3.5 text-gold" /> Check-In
               </label>
               <input
                 id="hero-check-in"
@@ -95,15 +95,15 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
                 value={checkIn}
                 min={defaultCheckIn}
                 onChange={(e) => setCheckIn(e.target.value)}
-                className="w-full border-b border-border bg-transparent py-2 text-sm text-ink-foreground outline-none focus:border-gold [color-scheme:dark]"
+                className="w-full border-b border-ink-foreground/30 bg-transparent py-2 text-sm text-white font-medium outline-none focus:border-gold transition-colors [color-scheme:dark]"
                 required
               />
             </div>
 
             {/* Check-Out */}
             <div>
-              <label htmlFor="hero-check-out" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[10px]">
-                <Calendar className="w-3 h-3 text-gold" /> Check-Out
+              <label htmlFor="hero-check-out" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[11px] font-semibold text-gold">
+                <Calendar className="w-3.5 h-3.5 text-gold" /> Check-Out
               </label>
               <input
                 id="hero-check-out"
@@ -111,21 +111,21 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
                 value={checkOut}
                 min={checkIn || defaultCheckIn}
                 onChange={(e) => setCheckOut(e.target.value)}
-                className="w-full border-b border-border bg-transparent py-2 text-sm text-ink-foreground outline-none focus:border-gold [color-scheme:dark]"
+                className="w-full border-b border-ink-foreground/30 bg-transparent py-2 text-sm text-white font-medium outline-none focus:border-gold transition-colors [color-scheme:dark]"
                 required
               />
             </div>
 
             {/* Room */}
             <div>
-              <label htmlFor="hero-room-type" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[10px]">
-                <Bed className="w-3 h-3 text-gold" /> Room
+              <label htmlFor="hero-room-type" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[11px] font-semibold text-gold">
+                <Bed className="w-3.5 h-3.5 text-gold" /> Room
               </label>
               <select
                 id="hero-room-type"
                 value={roomType}
                 onChange={(e) => setRoomType(e.target.value)}
-                className="w-full border-b border-border bg-transparent py-2 text-xs sm:text-sm text-ink-foreground outline-none focus:border-gold [&>option]:bg-ink"
+                className="w-full border-b border-ink-foreground/30 bg-transparent py-2 text-xs sm:text-sm text-white font-medium outline-none focus:border-gold transition-colors [&>option]:bg-ink"
               >
                 <option value="Standard Double Room">Standard Double (₹2,999)</option>
                 <option value="Deluxe Double Room">Deluxe Double (₹3,999)</option>
@@ -135,14 +135,14 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
 
             {/* Guests */}
             <div>
-              <label htmlFor="hero-guests-select" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[10px]">
-                <Users className="w-3 h-3 text-gold" /> Guests
+              <label htmlFor="hero-guests-select" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[11px] font-semibold text-gold">
+                <Users className="w-3.5 h-3.5 text-gold" /> Guests
               </label>
               <select
                 id="hero-guests-select"
                 value={guests}
                 onChange={(e) => setGuests(Number(e.target.value))}
-                className="w-full border-b border-border bg-transparent py-2 text-xs sm:text-sm text-ink-foreground outline-none focus:border-gold [&>option]:bg-ink"
+                className="w-full border-b border-ink-foreground/30 bg-transparent py-2 text-xs sm:text-sm text-white font-medium outline-none focus:border-gold transition-colors [&>option]:bg-ink"
               >
                 <option value={1}>1 Guest</option>
                 <option value={2}>2 Guests</option>
@@ -155,7 +155,7 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
             <div className="sm:col-span-2 lg:col-span-1">
               <button
                 type="submit"
-                className="btn-gold w-full !py-3 !text-xs flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                className="btn-gold w-full !py-3.5 !text-xs flex items-center justify-center gap-2 cursor-pointer shadow-lg hover:brightness-105"
               >
                 <span>Check Rates</span>
                 <ChevronRight className="w-4 h-4" />

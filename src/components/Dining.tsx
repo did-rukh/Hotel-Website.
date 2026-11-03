@@ -38,8 +38,8 @@ export const Dining = ({ onOpenBooking }: DiningProps) => {
         />
         <div className="hero-scrim absolute inset-0" />
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16 text-ink-foreground">
-          <p className="eyebrow">Savour</p>
-          <h2 className="mt-2 sm:mt-3 text-3xl sm:text-5xl lg:text-6xl font-display leading-tight">
+          <p className="eyebrow drop-shadow-sm font-semibold tracking-[0.25em]">Savour</p>
+          <h2 className="mt-2 sm:mt-3 text-3xl sm:text-5xl lg:text-6xl font-display leading-tight text-white drop-shadow-[0_4px_16px_rgba(0,0,0,0.7)]">
             The Signature Dining Experience
           </h2>
         </div>
@@ -58,16 +58,16 @@ export const Dining = ({ onOpenBooking }: DiningProps) => {
               Embark on an exquisite culinary journey celebrating the legendary gastronomy of the Malabar coast. Savor fiery fish curries, succulent seafood grills, and aromatic biryanis prepared with local spices, alongside continental staples and comforting South Indian dishes.
             </p>
 
-            <div className="mt-8 p-5 sm:p-6 bg-secondary/50 border border-border rounded-sm">
-              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-foreground font-medium mb-3">
+            <div className="mt-8 p-5 sm:p-6 bg-card border border-border shadow-sm rounded-sm">
+              <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-foreground font-semibold mb-3">
                 <Clock className="w-4 h-4 text-gold" />
                 <span>Restaurant Operating Hours</span>
               </div>
-              <p className="text-xs text-muted-foreground">
-                Breakfast Buffet: <strong>07:30 AM – 10:30 AM</strong>
+              <p className="text-xs text-muted-foreground font-normal">
+                Breakfast Buffet: <strong className="text-foreground font-semibold">07:30 AM – 10:30 AM</strong>
               </p>
-              <p className="text-xs text-muted-foreground mt-1">
-                Lunch & Dinner: <strong>12:30 PM – 11:00 PM</strong>
+              <p className="text-xs text-muted-foreground font-normal mt-1">
+                Lunch & Dinner: <strong className="text-foreground font-semibold">12:30 PM – 11:00 PM</strong>
               </p>
               <p className="text-xs text-gold mt-2 font-medium">
                 In-Room Dining available 24 hours daily

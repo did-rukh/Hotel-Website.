@@ -37,16 +37,16 @@
   --primary-foreground: oklch(0.97 0.015 85);
   --secondary: oklch(0.93 0.02 85);
   --secondary-foreground: oklch(0.22 0.03 165);
-  --muted: oklch(0.94 0.015 85);
-  --muted-foreground: oklch(0.48 0.02 165);
+  --muted: oklch(0.92 0.015 85);
+  --muted-foreground: oklch(0.35 0.025 165);
   --accent: oklch(0.74 0.11 82);
   --accent-foreground: oklch(0.2 0.03 165);
   --gold: oklch(0.74 0.11 82);
-  --ink: oklch(0.2 0.035 165);
-  --ink-foreground: oklch(0.95 0.02 85);
+  --ink: oklch(0.18 0.035 165);
+  --ink-foreground: oklch(0.98 0.015 85);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.86 0.025 85);
+  --border: oklch(0.82 0.025 85);
   --input: oklch(0.86 0.025 85);
   --ring: oklch(0.74 0.11 82);
 }
@@ -106,9 +106,9 @@
 .hero-scrim {
   background: linear-gradient(
     180deg,
-    color-mix(in oklab, var(--ink) 65%, transparent) 0%,
-    color-mix(in oklab, var(--ink) 25%, transparent) 40%,
-    color-mix(in oklab, var(--ink) 85%, transparent) 100%
+    color-mix(in oklab, var(--ink) 82%, transparent) 0%,
+    color-mix(in oklab, var(--ink) 55%, transparent) 45%,
+    color-mix(in oklab, var(--ink) 92%, transparent) 100%
   );
 }
 

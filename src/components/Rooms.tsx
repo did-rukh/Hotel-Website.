@@ -41,10 +41,10 @@ export const Rooms = ({ onSelectRoom, onBookRoom }: RoomsProps) => {
               <button
                 key={tab.value}
                 onClick={() => setFilter(tab.value)}
-                className={`cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] rounded-sm transition-all duration-300 ${
+                className={`cursor-pointer px-4 sm:px-5 py-2 sm:py-2.5 text-[11px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] rounded-sm transition-all duration-300 font-medium ${
                   filter === tab.value
-                    ? 'bg-ink text-ink-foreground border border-ink'
-                    : 'border border-border text-foreground hover:border-gold'
+                    ? 'bg-ink text-ink-foreground border border-ink shadow-md'
+                    : 'border border-border bg-card text-foreground hover:border-gold hover:text-gold shadow-xs'
                 }`}
               >
                 {tab.label}
@@ -69,16 +69,16 @@ export const Rooms = ({ onSelectRoom, onBookRoom }: RoomsProps) => {
                     className="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105"
                     loading="lazy"
                   />
-                  <div className="absolute top-3 left-3 bg-ink/90 text-ink-foreground px-2.5 py-1 text-[10px] tracking-[0.2em] uppercase">
+                  <div className="absolute top-3 left-3 bg-ink text-gold border border-gold/30 px-2.5 py-1 text-[10px] font-semibold tracking-[0.2em] uppercase rounded-xs shadow-md">
                     {room.category}
                   </div>
                 </div>
 
-                <p className="eyebrow !text-[11px]">
+                <p className="eyebrow !text-[11px] font-semibold">
                   {room.size} · {room.occupancy} · {room.bed}
                 </p>
 
-                <h3 className="mt-3 text-3xl font-display text-foreground">
+                <h3 className="mt-3 text-3xl font-display text-foreground font-medium">
                   {room.name}
                 </h3>
 
@@ -91,7 +91,7 @@ export const Rooms = ({ onSelectRoom, onBookRoom }: RoomsProps) => {
                   {room.features.slice(0, 3).map((f, i) => (
                     <span
                       key={i}
-                      className="text-[10px] uppercase tracking-wider px-2 py-1 bg-secondary text-secondary-foreground"
+                      className="text-[10px] uppercase tracking-wider px-2.5 py-1 bg-secondary text-foreground font-medium border border-border/80 rounded-xs"
                     >
                       {f}
                     </span>

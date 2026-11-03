@@ -60,10 +60,10 @@ export const Location = () => {
 
           {/* Attractions Guide List */}
           <div className="lg:col-span-6">
-            <div className="p-6 sm:p-8 rounded-sm bg-card border border-border">
+            <div className="p-6 sm:p-8 rounded-sm bg-card border border-border shadow-sm">
               <div className="flex items-center justify-between pb-4 border-b border-border mb-6">
                 <div>
-                  <h3 className="font-display text-xl text-foreground">
+                  <h3 className="font-display text-xl text-foreground font-semibold">
                     Kannur Landmarks & Travel Times
                   </h3>
                   <p className="text-xs text-muted-foreground mt-0.5">
@@ -77,7 +77,7 @@ export const Location = () => {
                 {kannurAttractions.map((attraction, i) => (
                   <div
                     key={i}
-                    className="p-3.5 rounded-sm bg-secondary/50 hover:bg-secondary border border-border hover:border-gold/40 transition-all duration-200"
+                    className="p-3.5 rounded-sm bg-secondary/40 hover:bg-secondary border border-border hover:border-gold/40 transition-all duration-200"
                   >
                     <div className="flex items-start justify-between gap-3">
                       <div>
@@ -93,7 +93,7 @@ export const Location = () => {
                         <span className="text-xs font-bold text-gold block">
                           {attraction.distance}
                         </span>
-                        <span className="text-[10px] text-muted-foreground flex items-center gap-1 justify-end mt-0.5">
+                        <span className="text-[11px] text-muted-foreground flex items-center gap-1 justify-end mt-0.5 font-medium">
                           <Clock className="w-3 h-3 text-gold" /> {attraction.time}
                         </span>
                       </div>

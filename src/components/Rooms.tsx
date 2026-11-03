@@ -100,7 +100,7 @@ export const Rooms = ({ onSelectRoom, onBookRoom }: RoomsProps) => {
               </div>
 
               {/* Price and Action Row */}
-              <div className="mt-8 pt-6 border-t border-border flex items-center justify-between gap-4">
+              <div className="mt-8 pt-6 border-t border-border flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                 <div>
                   <p className="font-display text-3xl text-foreground">
                     {room.price}
@@ -108,16 +108,16 @@ export const Rooms = ({ onSelectRoom, onBookRoom }: RoomsProps) => {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-4">
+                <div className="flex items-center justify-between sm:justify-end gap-5 sm:gap-6 w-full sm:w-auto">
                   <button
                     onClick={() => onSelectRoom(room)}
-                    className="link-gold !text-[11px]"
+                    className="link-gold !text-xs py-2 px-1 cursor-pointer"
                   >
                     Details
                   </button>
                   <button
                     onClick={() => onBookRoom(room.name)}
-                    className="btn-gold !px-4 !py-2 !text-[11px]"
+                    className="btn-gold !px-5 !py-2.5 !text-xs cursor-pointer"
                   >
                     Reserve
                   </button>

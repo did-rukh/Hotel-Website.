@@ -72,7 +72,7 @@ export const BookingModal = ({ isOpen, onClose, initialDetails }: BookingModalPr
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-ink/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 bg-ink/85 backdrop-blur-md animate-fade-in"
       onClick={onClose}
     >
       <div

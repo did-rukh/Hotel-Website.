@@ -12,7 +12,7 @@ export const RoomDetailsModal = ({ room, onClose, onBookRoom }: RoomDetailsModal
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center p-4 sm:p-6 bg-ink/80 backdrop-blur-md animate-fade-in"
+      className="fixed inset-0 z-[110] flex items-center justify-center p-4 sm:p-6 bg-ink/85 backdrop-blur-md animate-fade-in"
       onClick={onClose}
     >
       <div
@@ -122,21 +122,21 @@ export const RoomDetailsModal = ({ room, onClose, onBookRoom }: RoomDetailsModal
               </div>
             </div>
 
-            <div className="flex items-center gap-4 w-full sm:w-auto">
+            <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 w-full sm:w-auto">
               <button
                 onClick={onClose}
-                className="btn-outline-dark !px-5 !py-3 w-1/2 sm:w-auto"
+                className="btn-outline-dark !px-5 !py-3 w-full sm:w-auto text-center cursor-pointer"
               >
-                Close
+                Close Details
               </button>
               <button
                 onClick={() => {
                   onClose();
                   onBookRoom(room.name);
                 }}
-                className="btn-gold !px-6 !py-3 w-1/2 sm:w-auto"
+                className="btn-gold !px-6 !py-3 w-full sm:w-auto text-center cursor-pointer"
               >
-                Reserve Room
+                Reserve Your Stay
               </button>
             </div>
           </div>

@@ -60,12 +60,18 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
           <span className="hidden sm:inline">· Verified Expedia Score</span>
         </div>
 
-        {/* Buttons Row */}
-        <div className="mt-10 flex flex-wrap justify-center gap-4">
-          <a href="#booking-bar" className="btn-gold">
+        {/* Buttons Row with proper mobile spacing */}
+        <div className="mt-8 sm:mt-10 flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6 w-full max-w-sm sm:max-w-none mx-auto">
+          <a
+            href="#booking-bar"
+            className="btn-gold w-full sm:w-auto text-center !py-3.5"
+          >
             Reserve your stay
           </a>
-          <a href="#rooms" className="btn-outline-light">
+          <a
+            href="#rooms"
+            className="btn-outline-light w-full sm:w-auto text-center !py-3.5"
+          >
             Explore rooms
           </a>
         </div>

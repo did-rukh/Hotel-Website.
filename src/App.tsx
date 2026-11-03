@@ -13,6 +13,7 @@ import { Footer } from './components/Footer';
 import { FloatingMobileBar } from './components/FloatingMobileBar';
 import { BookingModal } from './components/BookingModal';
 import { RoomDetailsModal } from './components/RoomDetailsModal';
+import { ScrollToTop } from './components/ScrollToTop';
 import type { Room, BookingDetails } from './types';
 
 export function App() {
@@ -99,6 +100,8 @@ export function App() {
         onClose={() => setSelectedRoomDetails(null)}
         onBookRoom={handleBookSpecificRoom}
       />
+      {/* Scroll-To-Top Button */}
+      <ScrollToTop />
     </div>
   );
 }

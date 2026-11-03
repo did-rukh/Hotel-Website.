@@ -19,6 +19,17 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, [mobileMenuOpen]);
+
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
@@ -34,28 +45,29 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
     <>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-ink/95 py-3 backdrop-blur shadow-md' : 'py-6 bg-gradient-to-b from-ink/70 via-ink/20 to-transparent'
+          scrolled ? 'bg-ink/95 py-2.5 backdrop-blur shadow-md' : 'py-4 sm:py-5 bg-gradient-to-b from-ink/80 via-ink/30 to-transparent'
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 text-ink-foreground">
-          {/* Brand Logo & Name */}
+        <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 text-ink-foreground">
+          {/* Brand Logo (Enlarged, no text) */}
           <a
             href="#home"
-            className="flex items-center gap-3 group focus:outline-none"
-            aria-label="Hotel Grand Benale"
+            className="flex items-center group focus:outline-none"
+            aria-label={hotelInfo.name}
           >
             <img
               src={hotelInfo.logo}
               alt={hotelInfo.name}
-              className="h-9 w-auto object-contain transition-opacity duration-300 group-hover:opacity-80"
+              className={`w-auto object-contain transition-all duration-300 group-hover:opacity-90 ${
+                scrolled
+                  ? 'h-11 sm:h-13 md:h-15'
+                  : 'h-14 sm:h-18 md:h-22'
+              }`}
             />
-            <span className="font-display text-xl sm:text-2xl tracking-[0.25em] text-ink-foreground">
-              GRAND BENALE
-            </span>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-8 text-xs uppercase tracking-[0.2em] md:flex">
+          <nav className="hidden items-center gap-6 lg:gap-8 text-xs uppercase tracking-[0.2em] md:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -67,7 +79,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
             ))}
           </nav>
 
-          {/* Actions */}
+          {/* Desktop Actions */}
           <div className="hidden md:flex items-center gap-4">
             <a
               href={`tel:${hotelInfo.phoneRaw}`}
@@ -80,24 +92,24 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
 
             <button
               onClick={onOpenBooking}
-              className="btn-gold !px-5 !py-2.5"
+              className="btn-gold !px-5 !py-2.5 cursor-pointer"
             >
               Reserve
             </button>
           </div>
 
-          {/* Mobile Menu Hamburger */}
-          <div className="flex items-center gap-3 md:hidden">
+          {/* Mobile Menu Actions & Hamburger */}
+          <div className="flex items-center gap-2.5 md:hidden">
             <button
               onClick={onOpenBooking}
-              className="btn-gold !px-3 !py-1.5 !text-[11px]"
+              className="btn-gold !px-3 !py-1.5 !text-[11px] cursor-pointer"
             >
               Reserve
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-ink-foreground hover:text-gold transition-colors"
+              className="p-2 text-ink-foreground hover:text-gold transition-colors focus:outline-none cursor-pointer"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6 text-gold" /> : <Menu className="w-6 h-6" />}
@@ -106,47 +118,49 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
         </div>
       </header>
 
-      {/* Mobile Drawer */}
+      {/* Full-Screen Mobile Drawer (z-[100] covering homepage heading and logo) */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-40 bg-ink/90 backdrop-blur-md md:hidden"
-          onClick={() => setMobileMenuOpen(false)}
+          className="fixed inset-0 z-[100] bg-ink w-full h-full md:hidden flex flex-col justify-between overflow-y-auto"
         >
-          <div
-            className="fixed inset-y-0 right-0 w-full max-w-xs bg-ink border-l border-ink-foreground/10 p-6 flex flex-col justify-between overflow-y-auto"
-            onClick={(e) => e.stopPropagation()}
-          >
+          <div className="p-6 flex flex-col justify-between min-h-full">
             <div>
+              {/* Drawer Header with Logo & Close Button (No Grand Benale text) */}
               <div className="flex items-center justify-between pb-6 border-b border-ink-foreground/10">
-                <span className="font-display text-lg tracking-[0.25em] text-ink-foreground">
-                  GRAND BENALE
-                </span>
+                <img
+                  src={hotelInfo.logo}
+                  alt={hotelInfo.name}
+                  className="h-12 sm:h-14 w-auto object-contain"
+                />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-1.5 text-ink-foreground/60 hover:text-gold"
+                  className="p-2 rounded text-ink-foreground/80 hover:text-gold transition-colors focus:outline-none cursor-pointer"
+                  aria-label="Close Menu"
                 >
-                  <X className="w-5 h-5 text-gold" />
+                  <X className="w-7 h-7 text-gold" />
                 </button>
               </div>
 
+              {/* Mobile Navigation Links */}
               <nav className="mt-8 flex flex-col space-y-4 text-xs uppercase tracking-[0.2em]">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-2 text-ink-foreground/80 hover:text-gold border-b border-ink-foreground/5 transition-colors"
+                    className="py-3 text-ink-foreground/85 hover:text-gold border-b border-ink-foreground/5 transition-colors flex items-center justify-between"
                   >
-                    {link.name}
+                    <span>{link.name}</span>
                   </a>
                 ))}
               </nav>
             </div>
 
-            <div className="pt-6 border-t border-ink-foreground/10 space-y-4">
+            {/* Bottom Contact & Action */}
+            <div className="pt-8 border-t border-ink-foreground/10 space-y-4 mt-8 pb-4">
               <a
                 href={`tel:${hotelInfo.phoneRaw}`}
-                className="flex items-center justify-center gap-2 py-3 border border-ink-foreground/20 text-xs text-ink-foreground tracking-[0.15em] uppercase"
+                className="flex items-center justify-center gap-2 py-3.5 border border-ink-foreground/20 text-xs text-ink-foreground tracking-[0.15em] uppercase hover:border-gold hover:text-gold transition-colors"
               >
                 <Phone className="w-4 h-4 text-gold" />
                 <span>{hotelInfo.phone}</span>
@@ -157,12 +171,12 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
                   setMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="btn-gold w-full"
+                className="btn-gold w-full !py-3.5 cursor-pointer text-center"
               >
                 Reserve Your Stay
               </button>
 
-              <p className="eyebrow text-center !text-[10px]">
+              <p className="eyebrow text-center !text-[10px] text-ink-foreground/50">
                 Kakkad Road, Kannur, Kerala
               </p>
             </div>

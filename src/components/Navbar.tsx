@@ -44,12 +44,12 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled ? 'bg-ink/95 py-2.5 backdrop-blur shadow-md' : 'py-4 sm:py-5 bg-gradient-to-b from-ink/80 via-ink/30 to-transparent'
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
+          scrolled ? 'bg-ink/95 py-2 backdrop-blur-md shadow-sm border-b border-white/5' : 'py-3 sm:py-3.5 bg-gradient-to-b from-ink/80 via-ink/25 to-transparent'
         }`}
       >
         <div className="mx-auto flex max-w-7xl items-center justify-between px-4 sm:px-6 text-ink-foreground">
-          {/* Brand Logo (Enlarged, no text) */}
+          {/* Brand Logo (Compact & elegant) */}
           <a
             href="#home"
             className="flex items-center group focus:outline-none"
@@ -60,19 +60,19 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
               alt={hotelInfo.name}
               className={`w-auto object-contain transition-all duration-300 group-hover:opacity-90 ${
                 scrolled
-                  ? 'h-11 sm:h-13 md:h-15'
-                  : 'h-14 sm:h-18 md:h-22'
+                  ? 'h-8 sm:h-9 md:h-10'
+                  : 'h-10 sm:h-11 md:h-12'
               }`}
             />
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-5 xl:gap-8 text-xs uppercase tracking-[0.15em] xl:tracking-[0.2em] lg:flex">
+          <nav className="hidden items-center gap-5 xl:gap-7 text-[11px] xl:text-xs uppercase tracking-[0.18em] lg:flex font-medium">
             {navLinks.map((link) => (
               <a
                 key={link.name}
                 href={link.href}
-                className="text-ink-foreground/80 hover:text-gold transition-colors duration-200"
+                className="text-ink-foreground/85 hover:text-gold transition-colors duration-200 py-1"
               >
                 {link.name}
               </a>
@@ -83,7 +83,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
           <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${hotelInfo.phoneRaw}`}
-              className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-ink-foreground/80 hover:text-gold transition-colors"
+              className="flex items-center gap-1.5 text-[11px] uppercase tracking-[0.14em] text-ink-foreground/85 hover:text-gold transition-colors font-medium"
               title="Call Grand Benale Front Desk"
             >
               <Phone className="w-3.5 h-3.5 text-gold" />
@@ -92,27 +92,27 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
 
             <button
               onClick={onOpenBooking}
-              className="btn-gold !px-5 !py-2.5 cursor-pointer"
+              className="btn-gold !px-4 !py-2 !text-[11px] cursor-pointer tracking-wider"
             >
               Reserve
             </button>
           </div>
 
           {/* Mobile & Tablet Menu Actions & Hamburger */}
-          <div className="flex items-center gap-2.5 lg:hidden">
+          <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={onOpenBooking}
-              className="btn-gold !px-3 !py-1.5 !text-[11px] cursor-pointer"
+              className="btn-gold !px-3 !py-1.5 !text-[10px] cursor-pointer tracking-wider"
             >
               Reserve
             </button>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 text-ink-foreground hover:text-gold transition-colors focus:outline-none cursor-pointer"
+              className="p-1.5 text-ink-foreground hover:text-gold transition-colors focus:outline-none cursor-pointer"
               aria-label={mobileMenuOpen ? 'Close Menu' : 'Open Menu'}
             >
-              {mobileMenuOpen ? <X className="w-6 h-6 text-gold" /> : <Menu className="w-6 h-6" />}
+              {mobileMenuOpen ? <X className="w-5 h-5 text-gold" /> : <Menu className="w-5 h-5" />}
             </button>
           </div>
         </div>
@@ -126,29 +126,29 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
           <div className="p-6 flex flex-col justify-between min-h-full">
             <div>
               {/* Drawer Header with Logo & Close Button (No Grand Benale text) */}
-              <div className="flex items-center justify-between pb-6 border-b border-ink-foreground/10">
+              <div className="flex items-center justify-between pb-5 border-b border-ink-foreground/10">
                 <img
                   src={hotelInfo.logo}
                   alt={hotelInfo.name}
-                  className="h-12 sm:h-14 w-auto object-contain"
+                  className="h-10 sm:h-11 w-auto object-contain"
                 />
                 <button
                   onClick={() => setMobileMenuOpen(false)}
-                  className="p-2 rounded text-ink-foreground/80 hover:text-gold transition-colors focus:outline-none cursor-pointer"
+                  className="p-1.5 rounded text-ink-foreground/80 hover:text-gold transition-colors focus:outline-none cursor-pointer"
                   aria-label="Close Menu"
                 >
-                  <X className="w-7 h-7 text-gold" />
+                  <X className="w-6 h-6 text-gold" />
                 </button>
               </div>
 
               {/* Mobile Navigation Links */}
-              <nav className="mt-8 flex flex-col space-y-4 text-xs uppercase tracking-[0.2em]">
+              <nav className="mt-6 flex flex-col space-y-3 text-xs uppercase tracking-[0.18em]">
                 {navLinks.map((link) => (
                   <a
                     key={link.name}
                     href={link.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className="py-3 text-ink-foreground/85 hover:text-gold border-b border-ink-foreground/5 transition-colors flex items-center justify-between"
+                    className="py-2.5 text-ink-foreground/85 hover:text-gold border-b border-ink-foreground/5 transition-colors flex items-center justify-between"
                   >
                     <span>{link.name}</span>
                   </a>
@@ -157,10 +157,10 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
             </div>
 
             {/* Bottom Contact & Action */}
-            <div className="pt-8 border-t border-ink-foreground/10 space-y-4 mt-8 pb-4">
+            <div className="pt-6 border-t border-ink-foreground/10 space-y-3.5 mt-6 pb-2">
               <a
                 href={`tel:${hotelInfo.phoneRaw}`}
-                className="flex items-center justify-center gap-2 py-3.5 border border-ink-foreground/20 text-xs text-ink-foreground tracking-[0.15em] uppercase hover:border-gold hover:text-gold transition-colors"
+                className="flex items-center justify-center gap-2 py-3 border border-ink-foreground/20 text-xs text-ink-foreground tracking-[0.15em] uppercase hover:border-gold hover:text-gold transition-colors"
               >
                 <Phone className="w-4 h-4 text-gold" />
                 <span>{hotelInfo.phone}</span>
@@ -171,7 +171,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
                   setMobileMenuOpen(false);
                   onOpenBooking();
                 }}
-                className="btn-gold w-full !py-3.5 cursor-pointer text-center"
+                className="btn-gold w-full !py-3 cursor-pointer text-center"
               >
                 Reserve Your Stay
               </button>

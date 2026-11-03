@@ -52,16 +52,16 @@ export const Gallery = () => {
   }, [lightboxIndex, showNext, showPrev]);
 
   return (
-    <section id="gallery" className="py-24 lg:py-32 bg-background relative">
+    <section id="gallery" className="py-16 sm:py-24 lg:py-32 bg-background relative border-t border-border">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header & Filter Row */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
           <div>
-            <p className="eyebrow mb-3">
+            <p className="eyebrow mb-2 sm:mb-3">
               A Glimpse Inside
             </p>
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground tracking-tight">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground tracking-tight leading-tight">
               The Grand Benale Experience
             </h2>
             <p className="text-muted-foreground text-sm mt-3 max-w-lg">
@@ -81,7 +81,7 @@ export const Gallery = () => {
               <button
                 key={tab.val}
                 onClick={() => setActiveCategory(tab.val)}
-                className={`cursor-pointer px-4 py-2 rounded-sm text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
+                className={`cursor-pointer px-3.5 sm:px-4 py-2 rounded-sm text-[11px] sm:text-xs font-semibold uppercase tracking-wider transition-all duration-200 ${
                   activeCategory === tab.val
                     ? 'bg-ink text-ink-foreground'
                     : 'bg-transparent text-foreground border border-border hover:border-gold'

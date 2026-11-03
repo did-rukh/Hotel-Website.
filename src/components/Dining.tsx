@@ -30,35 +30,35 @@ export const Dining = ({ onOpenBooking }: DiningProps) => {
   return (
     <section id="dining" className="bg-background border-t border-border">
       {/* Visual Scrim Hero Strip */}
-      <div className="relative flex h-[50vh] min-h-[380px] items-end overflow-hidden">
+      <div className="relative flex h-[40vh] sm:h-[50vh] min-h-[320px] sm:min-h-[380px] items-end overflow-hidden">
         <img
           src={hotelInfo.diningAtmosphere}
           alt="Fine Dining at Hotel Grand Benale"
           className="absolute inset-0 h-full w-full object-cover"
         />
         <div className="hero-scrim absolute inset-0" />
-        <div className="relative mx-auto w-full max-w-7xl px-6 pb-16 text-ink-foreground">
+        <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pb-10 sm:pb-16 text-ink-foreground">
           <p className="eyebrow">Savour</p>
-          <h2 className="mt-3 text-4xl sm:text-6xl font-display">
+          <h2 className="mt-2 sm:mt-3 text-3xl sm:text-5xl lg:text-6xl font-display leading-tight">
             The Signature Dining Experience
           </h2>
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-24">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
           
           {/* Left Text */}
           <div className="lg:col-span-5">
             <p className="eyebrow">Culinary Artistry</p>
-            <h3 className="mt-4 text-3xl sm:text-5xl font-display">
+            <h3 className="mt-3 sm:mt-4 text-3xl sm:text-4xl lg:text-5xl font-display leading-tight">
               Where coastal tradition meets fine dining
             </h3>
-            <p className="mt-6 text-sm text-muted-foreground leading-relaxed">
+            <p className="mt-5 sm:mt-6 text-sm text-muted-foreground leading-relaxed">
               Embark on an exquisite culinary journey celebrating the legendary gastronomy of the Malabar coast. Savor fiery fish curries, succulent seafood grills, and aromatic biryanis prepared with local spices, alongside continental staples and comforting South Indian dishes.
             </p>
 
-            <div className="mt-8 p-6 bg-secondary/50 border border-border">
+            <div className="mt-8 p-5 sm:p-6 bg-secondary/50 border border-border rounded-sm">
               <div className="flex items-center gap-2 text-xs uppercase tracking-[0.2em] text-foreground font-medium mb-3">
                 <Clock className="w-4 h-4 text-gold" />
                 <span>Restaurant Operating Hours</span>
@@ -74,16 +74,16 @@ export const Dining = ({ onOpenBooking }: DiningProps) => {
               </p>
             </div>
 
-            <div className="mt-8 flex items-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
               <a
                 href={`tel:${hotelInfo.phoneRaw}`}
-                className="btn-gold"
+                className="btn-gold text-center cursor-pointer"
               >
                 Reserve a Table
               </a>
               <button
                 onClick={onOpenBooking}
-                className="btn-outline-dark"
+                className="btn-outline-dark text-center cursor-pointer"
               >
                 Stay & Dine
               </button>

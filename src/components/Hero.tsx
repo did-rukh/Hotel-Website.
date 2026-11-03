@@ -41,19 +41,19 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
       <div className="hero-scrim absolute inset-0" />
 
       {/* Main Centered Hero Content */}
-      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 my-auto text-center text-ink-foreground animate-rise">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-4 sm:px-6 my-auto text-center text-ink-foreground animate-rise">
         <p className="eyebrow">Kannur · Kerala · Est. Hospitality</p>
         
-        <h1 className="mt-6 text-5xl leading-none md:text-8xl font-display">
+        <h1 className="mt-4 sm:mt-6 text-3xl sm:text-5xl md:text-7xl lg:text-8xl leading-tight font-display">
           Where comfort <em className="text-gold italic font-normal">welcomes</em> you
         </h1>
 
-        <p className="mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-ink-foreground/85 font-light leading-relaxed">
+        <p className="mt-4 sm:mt-6 max-w-2xl mx-auto text-sm sm:text-base md:text-lg text-ink-foreground/85 font-light leading-relaxed">
           {hotelInfo.shortBio}
         </p>
 
         {/* Rating Pill */}
-        <div className="mt-6 inline-flex items-center gap-3 px-4 py-1.5 border border-ink-foreground/20 bg-ink/40 text-xs tracking-[0.2em] uppercase text-ink-foreground">
+        <div className="mt-5 sm:mt-6 inline-flex items-center gap-2 sm:gap-3 px-3.5 py-1.5 border border-ink-foreground/20 bg-ink/40 text-[11px] sm:text-xs tracking-[0.2em] uppercase text-ink-foreground">
           <span className="text-gold font-bold">{hotelInfo.rating}/10</span>
           <span>·</span>
           <span>{hotelInfo.ratingLabel}</span>
@@ -78,12 +78,12 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
       </div>
 
       {/* Embedded Reservation Bar */}
-      <div id="booking-bar" className="relative z-10 mx-auto w-full max-w-5xl px-6 mt-12">
+      <div id="booking-bar" className="relative z-10 mx-auto w-full max-w-5xl px-4 sm:px-6 mt-8 sm:mt-12">
         <form
           onSubmit={handleSubmit}
-          className="border border-ink-foreground/20 bg-ink/85 backdrop-blur-md p-6 text-ink-foreground shadow-2xl"
+          className="border border-ink-foreground/20 bg-ink/90 backdrop-blur-md p-4 sm:p-6 text-ink-foreground shadow-2xl rounded-sm"
         >
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 items-end">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-5 sm:gap-6 items-end">
             {/* Check-In */}
             <div>
               <label htmlFor="hero-check-in" className="eyebrow block mb-2 flex items-center gap-1.5 !text-[10px]">
@@ -152,10 +152,10 @@ export const Hero = ({ onCheckAvailability }: HeroProps) => {
             </div>
 
             {/* Submit */}
-            <div>
+            <div className="sm:col-span-2 lg:col-span-1">
               <button
                 type="submit"
-                className="btn-gold w-full !py-2.5 !text-xs flex items-center justify-center gap-2"
+                className="btn-gold w-full !py-3 !text-xs flex items-center justify-center gap-2 cursor-pointer shadow-md"
               >
                 <span>Check Rates</span>
                 <ChevronRight className="w-4 h-4" />

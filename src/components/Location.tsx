@@ -3,15 +3,15 @@ import { hotelInfo, kannurAttractions } from '../data/hotelData';
 
 export const Location = () => {
   return (
-    <section id="location" className="py-24 lg:py-32 bg-background border-t border-border relative">
+    <section id="location" className="py-16 sm:py-24 lg:py-32 bg-background border-t border-border relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <p className="eyebrow mb-3">
+        <div className="max-w-3xl mb-12 sm:mb-16">
+          <p className="eyebrow mb-2 sm:mb-3">
             Prime Connectivity
           </p>
-          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground tracking-tight mb-4">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-foreground tracking-tight leading-tight mb-4">
             Discover Kannur from Our <span className="text-gold italic">Doorstep</span>
           </h2>
           <p className="text-muted-foreground text-sm sm:text-base leading-relaxed">
@@ -19,7 +19,7 @@ export const Location = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-14 items-start">
           
           {/* Map Column */}
           <div className="lg:col-span-6 space-y-6">
@@ -37,7 +37,7 @@ export const Location = () => {
             </div>
 
             {/* Address Banner */}
-            <div className="p-5 rounded-sm bg-card border border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div className="p-4 sm:p-5 rounded-sm bg-card border border-border flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
               <div className="flex items-start gap-3">
                 <MapPin className="w-5 h-5 text-gold shrink-0 mt-0.5" />
                 <div>
@@ -50,7 +50,7 @@ export const Location = () => {
                 href="https://www.google.com/maps/search/?api=1&query=Hotel%20Grand%20Benale%20Kannur"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="btn-gold inline-flex items-center gap-1.5 shrink-0"
+                className="btn-gold inline-flex items-center justify-center gap-1.5 w-full sm:w-auto shrink-0 text-center cursor-pointer"
               >
                 <span>Directions</span>
                 <ArrowUpRight className="w-3.5 h-3.5" />

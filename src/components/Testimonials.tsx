@@ -16,10 +16,10 @@ export const Testimonials = () => {
   const activeReview = testimonialsData[currentIndex];
 
   return (
-    <section className="py-24 lg:py-32 bg-secondary/30 border-t border-border relative overflow-hidden">
+    <section className="py-16 sm:py-24 lg:py-32 bg-secondary/30 border-t border-border relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
           {/* Left Column: Big Score Card */}
           <div className="lg:col-span-5">

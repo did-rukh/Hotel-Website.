@@ -15,11 +15,11 @@ export const Footer = () => {
   };
 
   return (
-    <footer id="contact" className="bg-ink text-ink-foreground border-t border-ink-foreground/10 pt-20 pb-28 md:pb-16 relative">
+    <footer id="contact" className="bg-ink text-ink-foreground border-t border-ink-foreground/10 pt-16 sm:pt-20 pb-28 md:pb-16 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Direct Booking Perks Strip */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-16 border-b border-ink-foreground/10 mb-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pb-12 sm:pb-16 border-b border-ink-foreground/10 mb-12 sm:mb-16">
           {directBookingPerks.map((perk, i) => (
             <div key={i} className="flex items-start gap-3">
               <div className="w-8 h-8 rounded-sm bg-gold/15 border border-gold/30 flex items-center justify-center shrink-0 mt-0.5">

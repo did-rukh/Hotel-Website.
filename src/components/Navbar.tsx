@@ -67,7 +67,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav className="hidden items-center gap-6 lg:gap-8 text-xs uppercase tracking-[0.2em] md:flex">
+          <nav className="hidden items-center gap-5 xl:gap-8 text-xs uppercase tracking-[0.15em] xl:tracking-[0.2em] lg:flex">
             {navLinks.map((link) => (
               <a
                 key={link.name}
@@ -80,7 +80,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
           </nav>
 
           {/* Desktop Actions */}
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden lg:flex items-center gap-4">
             <a
               href={`tel:${hotelInfo.phoneRaw}`}
               className="flex items-center gap-2 text-xs uppercase tracking-[0.15em] text-ink-foreground/80 hover:text-gold transition-colors"
@@ -98,8 +98,8 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
             </button>
           </div>
 
-          {/* Mobile Menu Actions & Hamburger */}
-          <div className="flex items-center gap-2.5 md:hidden">
+          {/* Mobile & Tablet Menu Actions & Hamburger */}
+          <div className="flex items-center gap-2.5 lg:hidden">
             <button
               onClick={onOpenBooking}
               className="btn-gold !px-3 !py-1.5 !text-[11px] cursor-pointer"
@@ -121,7 +121,7 @@ export const Navbar = ({ onOpenBooking }: NavbarProps) => {
       {/* Full-Screen Mobile Drawer (z-[100] covering homepage heading and logo) */}
       {mobileMenuOpen && (
         <div
-          className="fixed inset-0 z-[100] bg-ink w-full h-full md:hidden flex flex-col justify-between overflow-y-auto"
+          className="fixed inset-0 z-[100] bg-ink w-full h-full lg:hidden flex flex-col justify-between overflow-y-auto"
         >
           <div className="p-6 flex flex-col justify-between min-h-full">
             <div>

@@ -30,16 +30,16 @@ const fullAmenities = [
 
 export const Amenities = () => {
   return (
-    <section id="amenities" className="py-24 lg:py-32 bg-background border-t border-border">
-      <div className="max-w-7xl mx-auto px-6">
+    <section id="amenities" className="py-16 sm:py-24 lg:py-32 bg-background border-t border-border">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
           <p className="eyebrow">The little things matter</p>
-          <h2 className="mt-4 text-4xl sm:text-5xl lg:text-6xl font-display">
+          <h2 className="mt-3 sm:mt-4 text-3xl sm:text-5xl lg:text-6xl font-display leading-tight">
             Everything for an effortless stay
           </h2>
-          <p className="mt-6 text-muted-foreground text-sm sm:text-base leading-relaxed">
+          <p className="mt-4 sm:mt-6 text-muted-foreground text-sm sm:text-base leading-relaxed">
             Thoughtfully considered facilities designed to provide comfort, connectivity, and peace of mind.
           </p>
         </div>
@@ -51,16 +51,16 @@ export const Amenities = () => {
             return (
               <div
                 key={index}
-                className="group flex min-h-44 flex-col items-center justify-center gap-4 border-b border-r border-border px-4 py-8 text-center transition-all duration-300 hover:bg-secondary"
+                className="group flex min-h-36 sm:min-h-44 flex-col items-center justify-center gap-3 sm:gap-4 border-b border-r border-border px-2.5 sm:px-4 py-6 sm:py-8 text-center transition-all duration-300 hover:bg-secondary"
               >
                 <Icon
-                  className="w-7 h-7 text-gold transition-transform duration-300 group-hover:scale-110"
+                  className="w-6 h-6 sm:w-7 sm:h-7 text-gold transition-transform duration-300 group-hover:scale-110"
                   strokeWidth={1.25}
                 />
-                <h3 className="text-xs font-semibold uppercase tracking-[0.12em] text-foreground">
+                <h3 className="text-[11px] sm:text-xs font-semibold uppercase tracking-[0.1em] sm:tracking-[0.12em] text-foreground">
                   {item.name}
                 </h3>
-                <p className="text-[11px] text-muted-foreground leading-relaxed max-w-[160px]">
+                <p className="text-[10px] sm:text-[11px] text-muted-foreground leading-relaxed max-w-[160px]">
                   {item.desc}
                 </p>
               </div>
